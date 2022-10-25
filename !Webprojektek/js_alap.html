@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projektek</title>
+    <style>
+body{
+    background-position: center;
+    background-size: cover;
+}
+#main-title{
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+/*            border: solid 1px white;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+*/
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+}
+#bevezeto{
+    font-size: 15px;
+    position: relative;
+    text-align: center;
+/*            border: solid 1px white;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+*/
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+}
+#szoveg{
+    font-size: 10px;
+    position: relative;
+    text-align: justify;
+/*            border: solid 1px white;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+*/
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+}
+#szoveg a{
+    font-size: 15px;
+    color: grey;
+}
+#szoveg a:hover{
+    color: red;
+}
+#menu{
+    height: 30px;
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    background-color: black;
+    opacity: 80%;
+    z-index: 1;
+}
+#menu ul{
+    margin: 0;
+    padding-top: 2px;
+}
+#menu li{
+    display: inline;
+    list-style-type: none;
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    border-right: 1px solid rgb(255, 0, 0);
+}
+#menu li:last-child{
+    border-right: 0;
+}
+a,
+#menu a,
+#menu a:link,
+#menu a:visited{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+a:hover,
+#menu a:hover{
+    color: red;
+}
+.fejlec{
+    height: 20vh;
+    background: url('./img/main.jpg');
+}
+.alsoszoveg{
+    color: grey;
+}
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="Link/image-map-generator-csapatmunka-master/index.html">Képtérkép</a></li>
+            <li><a href="Link/videojatek_tortenelem.html">Wikisablon</a></li>
+            <li><a href="Link/text-into-img/text-into-img.html">Képszöveg</a></li>
+            <li><a href="Link/kviz.html">kvíz</a></li>
+            <li><a href="Link/active-deactive-js.html">Aktiválás</a></li>
+        </ul>
+    </div>
+    <header class="fejlec">
+    <div id="main-title">
+        <h1>Webprojektek</h1>
+        <h4 class="alsoszoveg">készítette: Tóth Tamás</h4>
+    </div>
+    </header>
+    <div id="bevezeto">
+        <h2>Bevezető szöveg</h2>
+    </div>
+    <div id="szoveg">
+        <p>Paragrafus helye </p>
+        <a href="index.html">Funkciók letiltása</a>
+    </div>
+
+    <div class="container" id="main"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script>
+        function App() {
+    return React.createElement(
+        'div',{},
+        React.createElement(H2Component, {color: "red", text:"Funkciók"},),
+        React.createElement(DarkMode),
+        React.createElement(LightMode)
+    )
+};
+
+function H2Component(props) {
+    return React.createElement(
+        'h2',
+        {
+            style: {
+                fontFamily: 'cursive',
+                color: props.color,
+            },
+            className: 'p-2 m-5 text-center'
+        },
+        props.text
+    )
+};
+
+function DarkMode() {
+    return React.createElement(
+        'button',
+        {
+            id:"vilagosra-valtas",
+            onClick:function(){
+            document.body.style.backgroundColor = "rgb(40, 40, 40)";
+            document.body.style.color = "white";
+            document.getElementById("sotetre-valtas").style.display="block"
+            document.getElementById("vilagosra-valtas").style.display="none"
+            }
+        },
+        "Sötét mód"
+    )
+};
+
+function LightMode() {
+    return React.createElement(
+        'button',
+        {
+            style:{display: "none"},
+            id:"sotetre-valtas",
+            onClick:function(){
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            document.getElementById("sotetre-valtas").style.display="none"
+            document.getElementById("vilagosra-valtas").style.display="block"
+            }
+        },
+        "Világos mód"
+    )
+};
+
+ReactDOM.render(
+    React.createElement(App),
+    document.getElementById('main')
+);
+    </script>
+</body>
+</html>

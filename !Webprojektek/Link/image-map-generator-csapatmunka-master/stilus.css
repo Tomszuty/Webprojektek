@@ -1,0 +1,47 @@
+body{
+    width: 1000px;
+    margin: auto;
+    background-color: bisque;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1{
+    text-align: center;
+}
+
+#imgmap{
+    text-align: center;
+}
+
+.balra, .jobbra{
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.balra{
+    float: left;
+}
+
+.jobbra{
+    float: right;
+}
+
+p{
+    text-align: justify;
+}
+
+li{
+    font-size: 90%;
+    text-align: justify;
+}
+
+#linkkozepre{
+    text-align: center;
+}
+
+.kozepre{
+    background-color: antiquewhite;
+    padding: 20px;
+}
